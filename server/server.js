@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
-
+//parse aplication para q el server entienda json recibidos
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
-
-app.use(require('./routes/usuario'));
+// Configuracion global de rutas
+app.use(require('./routes/index'));
 
 const url = process.env.URLDB;
 mongoose.set('useCreateIndex', true);
